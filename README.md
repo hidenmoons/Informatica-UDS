@@ -1,5 +1,5 @@
 # Informatica-UDS
-Practica y Examenes de los esudiantes 
+
 # 📊 Examen de Excel – Medicina
 
 Bienvenidos al examen práctico de **Excel aplicado a la Medicina**.  
