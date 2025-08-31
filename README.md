@@ -71,3 +71,15 @@ Usa la siguiente tabla con datos de pacientes:
 3. Súbelo o entrégalo según las indicaciones del profesor.  
 
 ¡Éxito en el examen! 🍀
+tambien anexen en un archivo word con las preguntas y su respuesta 
+
+Que son los parametros en una funcion?
+
+Que pasa si intento Sumar una Celda con una letra y en otra hay un numero ?
+
+Que ocaciona que la funcion IF me regrese un False o Falso ?
+
+Su profresor es ingeniero en que rama ? 
+- *Industrial*
+- *Sistemas*
+- *Agronomo*
