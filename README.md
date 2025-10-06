@@ -144,7 +144,11 @@ button:hover {
     visibility: visible;
     opacity: 1;
 }
+```
 
+#### `script.js` (Ejemplo básico):
+
+```JS
 
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -167,3 +171,4 @@ function showToast(message) {
         toast.classList.remove('show');
     }, 3000);
 }
+```
