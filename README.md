@@ -1,5 +1,5 @@
 # Informatica-UDS
 
-# 📊 Subir Archivos de Practicas y Screen Shots
+# 📊 Subir Archivos de Practicas
 
 Se evaluara con la cantidad de practicas que tengan realizadas 
