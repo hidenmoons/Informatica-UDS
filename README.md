@@ -76,7 +76,10 @@ Puedes probar todo esto en el sitio web [OneCompiler](https://onecompiler.com/ht
     <script src="script.js"></script>
 </body>
 </html>
+```
+#### `Style.CSS` (Ejemplo básico):
 
+```CSS
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
