@@ -1,85 +1,176 @@
 # Informatica-UDS
 
-# 📊 Examen de Excel – Medicina
+# Instrucciones para la entrega de prácticas y examen
 
-Bienvenidos al examen práctico de **Excel aplicado a la Medicina**.  
-Este examen está diseñado para que practiquen el uso de funciones básicas:  
-- **SUMA**  
-- **SI (IF)**  
-- **SI anidado (IF anidado)**  
+## 1. Subida de archivos de prácticas
 
-En este archivo encontrarás los ejercicios con los datos necesarios.  
-Cada estudiante deberá resolverlos en Excel y entregar el archivo con sus respuestas.  
+Cada estudiante debe crear una carpeta con su nombre y código en el repositorio. Dentro de esa carpeta, deben subir **los archivos correspondientes a sus prácticas** de manera organizada. Las prácticas deben ser los archivos de código en el lenguaje que corresponda, y deben ser fáciles de identificar por el nombre.
 
----
+**Ejemplo de estructura de carpetas:**
 
-## ✍️ Ejercicio 1: Cálculo de Consultas Totales (SUMA)
+/2124300001 - ACOSTA GUEVARA HECTOR GENARO
+- practica1.html
+- practica2.js
+- practica3.css
 
-En la hoja de pacientes se registran las **consultas mensuales** de un paciente:
 
-| Mes     | Consultas |
-|---------|-----------|
-| Enero   | 3         |
-| Febrero | 4         |
-| Marzo   | 2         |
+/2124300014 - ESTRADA CORRAL BEDOY KATHERINE ISABELLA
+- practica1.html
+- practica1.js
+- practica1.cs
 
-👉 **Instrucción:**  
-En la celda debajo de los datos, usa la función **`=SUMA(...)`** para calcular el **total de consultas realizadas en los 3 meses**.  
+
+Asegúrate de que todos los archivos estén dentro de tu carpeta correspondiente y sean fáciles de identificar.
 
 ---
 
-## ✍️ Ejercicio 2: Determinar Riesgo (IF simple)
+## 2. Examen de Login
 
-En una tabla de pacientes tienes la siguiente información:  
+El examen consiste en realizar una página web con una interfaz de **login simple**. Para este ejercicio, debes crear 3 archivos básicos:
 
-| Nombre       | Edad | IMC |
-|--------------|------|-----|
-| Juan Pérez   | 25   | 22  |
-| Ana López    | 65   | 31  |
-| Luis García  | 45   | 28  |
+- **HTML**: Para la estructura de la página de login.
+- **CSS**: Para darle estilo a la página.
+- **JavaScript**: Para gestionar el comportamiento del formulario y mostrar un mensaje (toast) cuando el usuario inicie sesión correctamente.
 
-👉 **Instrucción:**  
-Agrega una nueva columna llamada **"Riesgo"**, y usa la función **`=SI(...)`** para que:  
-- Si el paciente **tiene más de 60 años** o su **IMC es mayor o igual a 30**, aparezca **"Sí"**.  
-- En caso contrario, aparezca **"No"**.  
+### Pasos a seguir:
 
----
+1. Crea una página en **HTML** con los siguientes elementos:
+   - Un **campo de usuario**.
+   - Un **campo de contraseña**.
+   - Un botón de **login**.
 
-## ✍️ Ejercicio 3: Clasificación de IMC (IF anidado)
+2. Usa **CSS** para darle estilo básico (puede ser muy simple).
 
-Usa la siguiente tabla con datos de pacientes:
+3. En **JavaScript**, debes agregar el siguiente comportamiento:
+   - Verifica si el nombre de usuario y la contraseña coinciden con los datos que hayas decidido (por ejemplo, usuario: `admin`, contraseña: `1234`).
+   - Si los datos son correctos, muestra un **toast** con el mensaje "Usuario logueado".
+   - Si los datos no son correctos, muestra un mensaje de error.
 
-| Nombre       | Peso (kg) | Altura (m) | IMC | Clasificación |
-|--------------|-----------|------------|-----|---------------|
-| Juan Pérez   | 70        | 1.70       |     |               |
-| Ana López    | 85        | 1.65       |     |               |
-| Luis García  | 90        | 1.75       |     |               |
+Puedes probar todo esto en el sitio web [OneCompiler](https://onecompiler.com/html), que te permite escribir, compilar y ejecutar código HTML, CSS y JavaScript de forma fácil.
 
-👉 **Instrucciones:**  
-1. Calcula el **IMC** con la fórmula:  
-2. En la columna **Clasificación**, usa un **SI anidado** para clasificar:  
-- IMC < 18.5 → **"Bajo Peso"**  
-- 18.5 ≤ IMC < 25 → **"Normal"**  
-- 25 ≤ IMC < 30 → **"Sobrepeso"**  
-- IMC ≥ 30 → **"Obesidad"**  
+### Estructura del código:
 
----
+#### `index.html` (Ejemplo básico):
 
-## ✅ Entrega
-1. Resuelve todos los ejercicios en el archivo de Excel.  
-2. Guarda el archivo con tu nombre, ejemplo: **Examen_JuanPerez.xlsx**.  
-3. Súbelo o entrégalo según las indicaciones del profesor.  
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Iniciar sesión</h2>
+        <form id="loginForm">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" required>
 
-¡Éxito en el examen! 🍀
-tambien anexen en un archivo word con las preguntas y su respuesta 
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" required>
 
-Que son los parametros en una funcion?
+            <button type="submit">Login</button>
+        </form>
+        <div id="toast" class="toast">Usuario logueado</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+```
+#### `Style.CSS` (Ejemplo básico):
 
-Que pasa si intento Sumar una Celda con una letra y en otra hay un numero ?
+```CSS
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 
-Que ocaciona que la funcion IF me regrese un False o Falso ?
+.login-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
 
-Su profresor es ingeniero en que rama ? 
-- *Industrial*
-- *Sistemas*
-- *Agronomo*
+h2 {
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+}
+```
+
+#### `script.js` (Ejemplo básico):
+
+```JS
+
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    if (username === 'admin' && password === '1234') {
+        showToast("Usuario logueado");
+    } else {
+        alert("Credenciales incorrectas");
+    }
+});
+
+function showToast(message) {
+    const toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(function() {
+        toast.classList.remove('show');
+    }, 3000);
+}
+```
