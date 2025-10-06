@@ -12,6 +12,8 @@ Cada estudiante debe crear una carpeta con su nombre y código en el repositorio
 - practica1.html
 - practica2.js
 - practica3.css
+
+
 /2124300014 - ESTRADA CORRAL BEDOY KATHERINE ISABELLA
 - practica1.html
 - practica1.js
