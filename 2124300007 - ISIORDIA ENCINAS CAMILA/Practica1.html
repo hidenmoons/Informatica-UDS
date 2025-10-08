@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Pastel</title>
+  <style>
+    /* Fondo general */
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f9f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* Contenedor del login */
+    .login-container {
+      background-color: #fcefee;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    /* Título */
+    .login-container h2 {
+      color: #7a6c85;
+      margin-bottom: 20px;
+    }
+
+    /* Campos de texto */
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #e1d7e7;
+      border-radius: 8px;
+      background-color: #fff;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus {
+      border-color: #cdb4db;
+    }
+
+    /* Botón */
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #cdb4db;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #b29ac9;
+    }
+
+    /* Toast */
+    #toast {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #cdb4db;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      transform: translateY(20px);
+    }
+
+    #toast.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    /* Toast colores */
+    #toast.success {
+      background-color: #a8dadc;
+    }
+
+    #toast.error {
+      background-color: #f4978e;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>🌷 Iniciar sesión</h2>
+
+    <label for="usuario">Usuario</label>
+    <input type="text" id="usuario" placeholder="Ingresa tu usuario">
+
+    <label for="contrasena">Contraseña</label>
+    <input type="password" id="contrasena" placeholder="Ingresa tu contraseña">
+
+    <button id="loginBtn">Login</button>
+  </div>
+
+  <div id="toast"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const loginBtn = document.getElementById("loginBtn");
+      const usuarioInput = document.getElementById("usuario");
+      const contrasenaInput = document.getElementById("contrasena");
+      const toast = document.getElementById("toast");
+
+      loginBtn.addEventListener("click", () => {
+        const usuario = usuarioInput.value.trim();
+        const contrasena = contrasenaInput.value.trim();
+
+        const usuarioCorrecto = "admin";
+        const contrasenaCorrecta = "1234";
+
+        if (usuario === usuarioCorrecto && contrasena === contrasenaCorrecta) {
+          mostrarToast("Usuario logueado 🌼", "success");
+        } else {
+          mostrarToast("Usuario o contraseña incorrectos 💔", "error");
+        }
+      });
+
+      function mostrarToast(mensaje, tipo) {
+        toast.textContent = mensaje;
+        toast.className = `${tipo} show`;
+
+        setTimeout(() => {
+          toast.className = toast.className.replace("show", "");
+        }, 3000);
+      }
+    });
+  </script>
+</body>
+</html>
