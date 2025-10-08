@@ -1,0 +1,94 @@
+body {
+  font-family: Arial, sans-serif;
+  /* Fondo degradado desde azul oscuro a azul medio */
+  background: linear-gradient(135deg, #003A66, #004D94);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: white;
+}
+
+.login-container {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  text-align: center;
+  width: 320px;
+  color: #003A66;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  color: #9E0400; /* Rojo institucional */
+}
+
+.login-container input {
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  background: #003A66;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login-container button:hover {
+  background: #9E0400; /* rojo al pasar cursor */
+  transition: 0.3s;
+}
+
+/* Botón acceso rápido separado y con estilo distinto */
+#quickAccess {
+  margin-top: 15px;
+  background: #9E0400;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#quickAccess:hover {
+  background: #003A66;
+  transition: 0.3s;
+}
+
+/* Toast */
+#toast {
+  visibility: hidden;
+  min-width: 220px;
+  background: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 15px;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 0.5s, bottom 0.5s;
+}
+
+#toast.show {
+  visibility: visible;
+  opacity: 1;
+  bottom: 50px;
+}
