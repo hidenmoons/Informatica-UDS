@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Pastel - Medicina</title>
+<!-- Fuente redonda Poppins de Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Fondo degradado pastel */
+    background: linear-gradient(135deg, #a3d5ff, #caa0ff, #ffc0cb);
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .login-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 50px 40px;
+    border-radius: 25px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    width: 400px;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 60px;
+    color: #5e60ce;
+    margin-bottom: 35px;
+  }
+
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 18px;
+    margin: 12px 0;
+    border: 2px solid #d1b3ff;
+    border-radius: 15px;
+    font-size: 20px;
+    outline: none;
+  }
+
+  input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #5e60ce;
+  }
+
+  button {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(90deg, #a3d5ff, #caa0ff);
+    border: none;
+    color: white;
+    font-weight: 600;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 20px;
+    transition: all 0.3s ease;
+  }
+
+  button:hover {
+    background: linear-gradient(90deg, #caa0ff, #ffc0cb);
+    transform: translateY(-3px);
+  }
+
+  #toast {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #5e60ce;
+    color: white;
+    text-align: center;
+    border-radius: 15px;
+    padding: 18px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  #toast.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+  @keyframes fadein {
+    from { bottom: 0; opacity: 0; }
+    to { bottom: 30px; opacity: 1; }
+  }
+
+  @keyframes fadeout {
+    from { bottom: 30px; opacity: 1; }
+    to { bottom: 0; opacity: 0; }
+  }
+
+  .error {
+    color: #ff4d6d;
+    margin-top: 12px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="login-container" id="login-box">
+    <h2>MEDICINA</h2>
+    <input type="text" id="usuario" placeholder="Usuario">
+    <input type="password" id="password" placeholder="Contraseña">
+    <button onclick="login()">Ingresar</button>
+    <div id="error-msg" class="error"></div>
+  </div>
+
+  <div id="toast">Usuario logueado</div>
+
+  <script>
+    function login() {
+      const usuario = document.getElementById("usuario").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const errorMsg = document.getElementById("error-msg");
+      const toast = document.getElementById("toast");
+
+      if (usuario === "ABDEL" && password === "2005") {
+        errorMsg.textContent = "";
+        toast.className = "show";
+        setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
+
+        setTimeout(() => {
+          document.body.innerHTML = `
+            <div style="
+              display:flex;
+              flex-direction:column;
+              align-items:center;
+              justify-content:center;
+              height:100vh;
+              background: linear-gradient(135deg, #a3d5ff, #caa0ff, #ffc0cb);
+              color: white;
+              font-family: 'Poppins', sans-serif;
+              text-align: center;
+            ">
+              <h1 style="font-size:60px; margin-bottom:25px;">Bienvenido, ${usuario}</h1>
+              <p style="font-size:24px;">Has iniciado sesión correctamente ✅</p>
+              <button id="logout-btn" style="
+                margin-top:30px;
+                padding:18px 30px;
+                background: #5e60ce;
+                color:white;
+                border:none;
+                border-radius:15px;
+                cursor:pointer;
+                font-weight:600;
+                font-size:22px;
+                font-family: 'Poppins', sans-serif;
+              ">Cerrar sesión</button>
+            </div>`;
+
+          const logoutBtn = document.getElementById("logout-btn");
+          logoutBtn.addEventListener("click", () => location.reload());
+        }, 2000);
+      } else {
+        errorMsg.textContent = "Usuario o contraseña incorrectos.";
+      }
+    }
+  </script>
+
+</body>
+</html>
