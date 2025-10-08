@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login</title>
+  <!-- Enlace al archivo de estilos -->
+  <link rel="stylesheet" href="toes.css">
+</head>
+<body>
+  <main>
+    <section aria-labelledby="login-title">
+      <h1 id="login-title">Iniciar sesión</h1>
+
+      <!-- Formulario de login -->
+      <form id="login-form" action="/login" method="post" novalidate>
+        <input type="hidden" name="csrf_token" value="">
+
+        <fieldset>
+          <legend>Credenciales</legend>
+
+          <div>
+            <label for="email">Correo electrónico</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              placeholder="tucorreo@ejemplo.com"
+            />
+          </div>
+
+          <div>
+            <label for="password">Contraseña</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              required
+              placeholder="********"
+            />
+          </div>
+
+          <div>
+            <input
+              id="remember"
+              name="remember"
+              type="checkbox"
+              value="1"
+              aria-describedby="remember-desc"
+            />
+            <label for="remember">Recuérdame</label>
+            <div id="remember-desc">No usar en equipos públicos.</div>
+          </div>
+        </fieldset>
+
+        <div>
+          <button id="enterBtn">Entrar</button>
+<button id="cafeBtn">Ver Café</button>
+<div>
+<a href="/forgot-password">¿Olvidaste tu contraseña?</a>
+<p>¿No tienes cuenta? <a href="/register">Regístrate</a></p>
+        </div>
+<!-- Botón 2 -->
+      
+    </section>
+  </main>
+ <div>
+          
+        </div>
+
+        <div>
+          
+        </div>
+      </form>
+    </section>
+  </main>
+  <script src="pag.js"></script>
+</body>
+</html>
+
+  <!-- Contenedor para el toast -->
+  <div id="toast"></div>
+
+  <!-- Enlace al JS -->
+  <script src="pag.js"></script>
+</body>
+</html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Página de Entrada</title>
+</head>
+<body>
+  
+
+ 
+
+      
