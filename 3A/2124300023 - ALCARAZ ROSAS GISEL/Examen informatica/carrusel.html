@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Platónicos</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #FFDBED, #CBA6F7);
+      color: #6B3FA0;
+      text-align: center;
+    }
+
+    header {
+      padding: 20px;
+      background: linear-gradient(135deg, #CBA6F7, #FFDBED);
+      color: white;
+      font-size: 2em;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    .carousel {
+      position: relative;
+      max-width: 600px;
+      margin: 40px auto;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .carousel img {
+      width: 100%;
+      display: none;
+      border-radius: 20px;
+    }
+
+    .carousel img.active {
+      display: block;
+    }
+
+    .buttons {
+      margin-top: 20px;
+    }
+
+    button {
+      background: linear-gradient(135deg, #FFDBED, #CBA6F7);
+      color: #6B3FA0;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #CBA6F7, #FFDBED);
+      color: white;
+    }
+
+    footer {
+      background-color: #FFDBED;
+      padding: 10px;
+      margin-top: 40px;
+      font-weight: bold;
+      color: #6B3FA0;
+    }
+  </style>
+</head>
+<body>
+  <header>💫 Platónicos 💫</header>
+
+  <div class="carousel">
+    <img src="c1.jpg" class="active" alt="Imagen 1">
+    <img src="c2.jpg" alt="Imagen 2">
+    <img src="c3.jpg" alt="Imagen 3">
+  </div>
+
+  <div class="buttons">
+    <button onclick="prevImage()">⏮️ Anterior</button>
+    <button onclick="nextImage()">⏭️ Siguiente</button>
+  </div>
+
+  <footer>
+    <p>© 2025 Platónicos - Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    let index = 0;
+    const images = document.querySelectorAll('.carousel img');
+
+    function showImage(i) {
+      images.forEach(img => img.classList.remove('active'));
+      images[i].classList.add('active');
+    }
+
+    function nextImage() {
+      index = (index + 1) % images.length;
+      showImage(index);
+    }
+
+    function prevImage() {
+      index = (index - 1 + images.length) % images.length;
+      showImage(index);
+    }
+
+    // Cambio automático cada 3 segundos
+    setInterval(nextImage, 3000);
+  </script>
+</body>
+</html>
