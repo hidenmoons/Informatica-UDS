@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Demo</title>
+  <link rel="stylesheet" href="practica3.css" />
+</head>
+<body>
+  <!-- Sección de login -->
+  <section id="loginSection">
+    <form id="loginForm">
+      <h2>Iniciar Sesión</h2>
+      <label for="email">Correo:</label>
+      <input type="email" id="email" name="email" />
+      <p id="emailError" class="error"></p>
+
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" name="password" />
+      <p id="pwdError" class="error"></p>
+
+      <button type="submit">Ingresar</button>
+      <button type="button" id="demoBtn">Usar demo</button>
+
+      <p id="formMsg"></p>
+    </form>
+  </section>
+
+  <!-- Sección del dashboard -->
+  <section id="dashboardSection" style="display:none;">
+    <h2>Bienvenido al Dashboard</h2>
+    <p>Has iniciado sesión exitosamente.</p>
+    <ul>
+      <li>📊 Datos hospitalarios</li>
+      <li>💊 Fármacos registrados</li>
+      <li>👩‍⚕️ Información clínica</li>
+    </ul>
+    <button id="logoutBtn">Cerrar sesión</button>
+  </section>
+
+  <script src="practica2.js"></script>
+</body>
+</html>
