@@ -1,0 +1,139 @@
+/* ====== TOAST ====== */
+#toast {
+  visibility: hidden;
+  min-width: 200px;
+  background-color: #28a745;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  padding: 1rem;
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+#toast.show {
+  visibility: visible;
+  opacity: 1;
+}
+/* ====== RESET BÁSICO ====== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: system-ui, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* ====== CONTENEDOR PRINCIPAL ====== */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+main {
+  width: 100%;
+  max-width: 400px;
+}
+
+section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ====== TITULO ====== */
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+/* ====== FORMULARIO ====== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ====== INPUTS ====== */
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* ====== CHECKBOX ====== */
+input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+#remember-desc {
+  font-size: 0.85rem;
+  color: #555;
+  margin-left: 1.5rem;
+}
+
+/* ====== BOTÓN ====== */
+button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* ====== ENLACES ====== */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+div:last-of-type {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ====== TOAST ====== */
+#toas
