@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="Examen.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <img src="usuario.png" alt="Descripción de la imagen" width="200" height="200">
+        <h2 style="font-family: 'Poppins', sans-serif; font-size: 350%;">Iniciar sesión</h2>
+        <form id="loginForm">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" required>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <div id="toast" class="toast">Usuario logueado</div>
+    </div>
+    <script src="Examen.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login — Demo</title>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#4f46e5;
+      --muted:#9aa4b2;
+      --white:#ecf0f6;
+    }
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(79,70,229,0.12), transparent),
+                  radial-gradient(900px 400px at 95% 90%, rgba(16,185,129,0.06), transparent),
+                  var(--bg);
+      color:var(--white);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+    .card{
+      width:100%;
+      max-width:420px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.04);
+      border-radius:12px;
+      padding:28px;
+      box-shadow:0 6px 30px rgba(2,6,23,0.6);
+    }
+    h1{margin:0 0 8px 0;font-size:1.3rem}
+    p.lead{margin:0 0 20px 0;color:var(--muted);font-size:0.95rem}
+
+    label{display:block;font-size:0.85rem;margin-bottom:6px;color:var(--muted)}
+    .input{
+      width:100%;
+      padding:12px 12px;
+      border-radius:8px;
+      border:1px solid rgba(255,255,255,0.06);
+      background:rgba(255,255,255,0.02);
+      color:var(--white);
+      outline:none;
+      font-size:0.98rem;
+      box-sizing:border-box;
+    }
+    .input:focus{box-shadow:0 0 0 4px rgba(79,70,229,0.08);border-color:var(--accent)}
+
+    .row{display:flex;gap:12px}
+    .checkbox{display:flex;align-items:center;gap:8px;margin-top:12px}
+    .btn{
+      display:inline-block;padding:12px 14px;border-radius:10px;border:0;background:var(--accent);color:white;font-weight:600;
+      cursor:pointer;width:100%;font-size:1rem;margin-top:14px
+    }
+    .btn:active{transform:translateY(1px)}
+    .muted-link{color:var(--muted);text-decoration:none;font-size:0.9rem}
+
+    .error{color:#ff6b6b;font-size:0.9rem;margin-top:8px}
+    .success{color:#7ee787;font-size:0.95rem;margin-top:8px}
+
+    .small{font-size:0.85rem;color:var(--muted)}
+    .pw-wrap{position:relative}
+    .pw-toggle{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:0;color:var(--muted);cursor:pointer;font-size:0.9rem}
+
+    footer{margin-top:16px;text-align:center;color:var(--muted);font-size:0.85rem}
+
+    @media (max-width:480px){
+      .card{padding:20px}
+    }
+  </style>
+</head>
+<body>
+  <main class="card" aria-labelledby="login-title">
+    <header>
+      <h1 id="login-title">Iniciar sesión</h1>
+      <p class="lead">Accede a tu cuenta de forma segura</p>
+    </header>
+
+    <form id="loginForm" novalidate>
+      <div>
+        <label for="email">Correo electrónico</label>
+        <input id="email" name="email" type="email" class="input" placeholder="tu@ejemplo.com" required aria-required="true" />
+        <div id="emailError" class="error" aria-live="polite" style="display:none"></div>
+      </div>
+
+      <div style="margin-top:14px">
+        <label for="password">Contraseña</label>
+        <div class="pw-wrap">
+          <input id="password" name="password" type="password" class="input" placeholder="••••••••" minlength="6" required aria-required="true" />
+          <button type="button" id="togglePw" class="pw-toggle" aria-label="Mostrar contraseña">Mostrar</button>
+        </div>
+        <div id="pwError" class="error" aria-live="polite" style="display:none"></div>
+      </div>
+
+      <div class="row" style="align-items:center;justify-content:space-between;margin-top:12px">
+        <label class="checkbox"><input type="checkbox" id="remember" name="remember"> <span class="small">Recuérdame</span></label>
+        <a class="muted-link" href="#" id="forgot">¿Olvidaste tu contraseña?</a>
+      </div>
+
+      <button class="btn" type="submit">Entrar</button>
+
+      <div id="formMessage" role="status" aria-live="polite"></div>
+
+    </form>
+
+    <footer>
+      ¿No tienes cuenta? <a href="#" class="muted-link">Regístrate</a>
+    </footer>
+  </main>
+
+  <script src="login.js"></script>
+</body>
+</html>
