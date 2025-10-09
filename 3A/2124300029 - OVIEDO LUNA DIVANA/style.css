@@ -1,0 +1,88 @@
+/* Fondo degradado pastel */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #FFD6EB, #DCC7FF);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Caja del login */
+.login-container {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 320px;
+  text-align: center;
+}
+
+/* Título */
+h2 {
+  color: #9B59B6;
+  margin-bottom: 20px;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 20px;
+  border: 2px solid #E8D1FF;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s;
+  font-size: 15px;
+}
+
+input:focus {
+  border-color: #CFA7FF;
+  box-shadow: 0 0 5px #E8C8FF;
+}
+
+/* Botón */
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #F8BBD0, #CBA6F7);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #CBA6F7, #F8BBD0);
+}
+
+/* Toast */
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #F8BBD0;
+  color: #6B3FA0;
+  text-align: center;
+  border-radius: 10px;
+  padding: 15px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.5s;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+}
+
