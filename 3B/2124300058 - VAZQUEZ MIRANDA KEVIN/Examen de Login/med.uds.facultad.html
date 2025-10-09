@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>UDS Facultad de Medicina - Portal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #003A66, #004D94);
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #003A66;
+      padding: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+    }
+    nav {
+      background: #9E0400;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+    }
+    nav button {
+      background: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      color: #003A66;
+      font-weight: bold;
+    }
+    nav button:hover {
+      background: #003A66;
+      color: white;
+    }
+    main {
+      padding: 30px;
+    }
+    section {
+      display: none;
+      background: white;
+      color: #003A66;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 12px;
+      width: 80%;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    section.active {
+      display: block;
+    }
+    h3 {
+      color: #9E0400;
+    }
+    form input, form button {
+      padding: 8px;
+      margin: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    form button {
+      background: #003A66;
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+    form button:hover {
+      background: #9E0400;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: #f4f4f4;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 6px;
+    }
+    footer {
+      background: #9E0400;
+      padding: 15px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    UDS Facultad de Medicina - Portal Médico
+  </header>
+
+  <nav>
+    <button onclick="showSection('consultas')">Consultas</button>
+    <button onclick="showSection('farmacos')">Fármacos</button>
+    <button onclick="showSection('hospital')">Hospital</button>
+  </nav>
+
+  <main>
+    <!-- Consultas Médicas -->
+    <section id="consultas" class="active">
+      <h3>📋 Consultas Médicas</h3>
+      <form id="consultaForm">
+        <input type="text" id="paciente" placeholder="Nombre del paciente" required>
+        <input type="text" id="valor" placeholder="Valor clínico (ej. presión 120/80)" required>
+        <button type="submit">Agregar Consulta</button>
+      </form>
+      <ul id="consultaList"></ul>
+    </section>
+
+    <!-- Fármacos -->
+    <section id="farmacos">
+      <h3>💊 Fármacos</h3>
+      <form id="farmacoForm">
+        <input type="text" id="farmaco" placeholder="Nombre del fármaco" required>
+        <input type="text" id="dosis" placeholder="Dosis (ej. 500mg cada 8h)" required>
+        <button type="submit">Agregar Fármaco</button>
+      </form>
+      <ul id="farmacoList"></ul>
+    </section>
+
+    <!-- Información Hospitalaria -->
+    <section id="hospital">
+      <h3>🏥 Información Hospitalaria</h3>
+      <form id="hospitalForm">
+        <input type="text" id="departamento" placeholder="Nombre del departamento" required>
+        <input type="text" id="responsable" placeholder="Responsable" required>
+        <button type="submit">Agregar Info</button>
+      </form>
+      <ul id="hospitalList"></ul>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 UDS Facultad de Medicina - Sistema Médico Digital
+  </footer>
+
+  <script>
+    // Mostrar secciones
+    function showSection(id) {
+      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+
+    // Consultas
+    document.getElementById("consultaForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const paciente = document.getElementById("paciente").value;
+      const valor = document.getElementById("valor").value;
+      const li = document.createElement("li");
+      li.textContent = `${paciente} - ${valor}`;
+      document.getElementById("consultaList").appendChild(li);
+      this.reset();
+    });
+
+    // Fármacos
+    document.getElementById("farmacoForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const farmaco = document.getElementById("farmaco").value;
+      const dosis = document.getElementById("dosis").value;
+      const li = document.createElement("li");
+      li.textContent = `${farmaco} - ${dosis}`;
+      document.getElementById("farmacoList").appendChild(li);
+      this.reset();
+    });
+
+    // Hospital
+    document.getElementById("hospitalForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const departamento = document.getElementById("departamento").value;
+      const responsable = document.getElementById("responsable").value;
+      const li = document.createElement("li");
+      li.textContent = `${departamento} - Responsable: ${responsable}`;
+      document.getElementById("hospitalList").appendChild(li);
+      this.reset();
+    });
+  </script>
+</body>
+</html>
